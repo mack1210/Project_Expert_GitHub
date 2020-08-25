@@ -36,7 +36,7 @@
 # print(sqrt(16))
 
 # #Random function
-from random import *
+# from random import *
 # print(random())
 # print(random()*10)
 # print(int(random() * 10))
@@ -375,7 +375,652 @@ print(sample(lst, 1))
 #     print("{0}, 커피가 준비 되었습니다. 호출 {1}번째".format(customer, index))
 #     index += 1
 
-customer = "토르"
-person = "Unknown"
-while person != customer:
-    print("{0}, 커피가 준비 되었습니다.".format(customer))
+# customer = "토르"
+# person = "Unknown"
+# while person != customer:
+#     print("{0}, 커피가 준비 되었습니다.".format(customer))
+#     person = input("이름이 어떻게 되세요?") 
+
+
+
+# # continue와 break
+# absent = [2, 5] #결석
+# no_book = [7] #책 깜빡
+# for student in range(1, 11): #1부터 10번까지 책 읽힐 것
+#     if student in absent:
+#         continue # 반복문 탈출 실패 countinue는 밑의 내용으로 진행하지 않고 다시 for문으로 올라가서 진행
+#     elif student in no_book:
+#         print("오늘 수업 여기까지. {0}는 교무실로 따라와".format(student)) #엄한 선생님이라서 수업을 바로 끝내버림
+#         break #반복문 탈출
+#     print("{0}, 책을 읽어봐!".format(student))
+
+# # 한줄 for loop
+# # 출석번호가 1 2 3 4 앞에 100을 붙이기로 함. 101, 102, 103, 104 ...
+# students = range(1,6)
+# print(students)
+# students = [i+100 for i in students]
+# print(students)
+
+# # 학생 이름을 길이로 변환
+# students = ["Iron", "Thor", "Groot"]
+# students = [len(i) for i in students]
+# print(students)
+
+# # 학생 이름들을 대문자로 변환
+# students = ["Iron", "Thor", "Groot"]
+# students = [i.upper for i in students]
+# print(students)
+
+'''
+Quiz) 당신은 Cocoa 서비스를 이용하는 택시 기사님입니다.
+50명의 승객과 매칭 기회가 있을 때, 총 탑승 승객 수를 구하는 프로그램을 작성하시오.
+
+조건 1: 승객별 운행 소요 시간은 5~50 사이의 난수로 정해집니다.
+조건 2: 당신은 소요 시간 5분~15분 사이의 승객만 매칭해야 합니다.
+
+(출력문 예제)
+[0] 1번째 손님 (소요시간 : 15분)
+[ ] 2번째 손님 (소요시간 : 50분)
+[0] 3번째 손님 (소요시간 : 5분)
+...
+[ ] 50번째 손님 (소요시간 : 16분)
+'''
+# from random import randint
+# total = 0
+# for i in range(1,51):
+#     t = randint(5,51) #5부터 50분 사이의 시간
+#     if 5 <= t <= 15:   
+#         print("[{0}] {1}번째 손님 (소요시간 : {2}분)".format(0, i, t))
+#         total += 1
+#     else:
+#         print("[{0}] {1}번째 손님 (소요시간 : {2}분)".format(" ", i, t))
+# print("\n총 탑승 승객 : {}분".format(total))
+
+
+# ######### 함수
+# def open_accoun():
+#     print("새로운 계좌가 생성되었습니다.")
+
+# open_accoun()
+
+# def deposit(balance, money):
+#     print("입금이 완료되었습니다. 잔액은 {0}원 입니다.".format(balance + money))
+#     return balance+money
+
+# deposit(100, 200)
+
+# def withdraw(balance, money):
+#     if(balance >= money):
+#         print("출금 완료. 잔액은 {0}원 입니다.".format(balance-money))
+#         return balance-money
+#     else:
+#         print("출금 불가. 잔액은 {0}원 입니다.".format(balance))
+
+# withdraw(200, 100)
+
+# def withdraw_night(balance, money):
+#     commission = 100
+#     return commission, balance -money -commission #tuple형식으로 보낸다
+# balance = 0
+# commission, balance = withdraw_night(balance, 500)
+# print("수수료 {0}원이며, 잔액은 {1}원 입니다.".format(commission, balance))
+
+# def profile(name, age, main_lang):
+#     print("이름 : {0}\t나이 : {1}\t 주 사용 언어 : {2}"\
+#         .format(name, age, main_lang)) # \ 를 붙이면 두 문장을 한 문장으로 여김
+# profile("유재석", 20, "파이썬")
+# profile("김태호", 25, "자바")
+
+# 같은 학교 같은 학년 같은 반 같은 수업. 기본 값을 넣어보자
+# def profile(name, age = 17, main_lang = "파이썬"):
+#     print("이름 : {0}\t나이 : {1}\t 주 사용 언어 : {2}"\
+#         .format(name, age, main_lang)) # \ 를 붙이면 두 문장을 한 문장으로 여김
+
+# profile("유재석")
+# profile("김태호")
+
+#키워드 값
+# def profile(name, age, main_lang):
+#     print(name, age, main_lang) # \ 를 붙이면 두 문장을 한 문장으로 여김
+# profile(name = "유재석", age = 20, main_lang = "파이썬")
+# profile(main_lang = "자바", age = 25, name = "김태호")
+
+# def profile(name, age, lang1, lang2, lang3, lang4, lang5):
+#     print("이름 : {0}\t나이 : {1}\t".format(name, age), end = " ") #end가 붙으면 옆으로 출력, 없으면 밑으로 출력이 된다.
+#     print(lang1, lang2, lang3, lang4, lang5)
+
+# profile("유재석", 20, "파이썬", "자바", "C", "C++", "C#")
+# profile("김태호", 20, "코틀린", "스위프트", "", "", "")
+
+# #### 가변인자 (위에가 불편)
+# def profile(name, age, *language):
+#     print("이름 : {0}\t나이 : {1}\t".format(name, age), end = " ") #end가 붙으면 옆으로 출력, 없으면 밑으로 출력이 된다.
+#     for lang in language:
+#         print(lang, end = " ")
+#     print()
+
+# profile("유재석", 20, "파이썬", "자바", "C", "C++", "C#")
+# profile("김태호", 20, "코틀린", "스위프트")
+
+
+# ############### 지역 변수와 전역 변수
+# gun = 10
+# def checkpoint(soldiers): #경계근무
+#     global gun #전역공간에 있는 gun사용 #메모리를 많이 먹기에 권장되는 방법은 아님 
+#     gun = gun - soldiers
+#     print("[함수 내] 남은 총 : {0}".format(gun))
+
+# def checkpoint_ret(gun, soldiers):
+#     gun = gun - soldiers
+#     print("[함수 내] 남은 총 : {0}".format(gun))
+#     return gun
+
+# print("전체 총 : {0}".format(gun))
+# # checkpoint(2) # 2명이 경계 근무 나감
+# gun = checkpoint_ret(gun, 4)
+# print("남은 총 : {0}".format(gun))
+
+'''Quiz) 표준 체중을 구하는 프로그램을 작성하시오.
+    키(m), 몸무게kg
+    남: 키 * 키 * 22
+    녀: 키 * 키 * 21
+
+    조건1) 표준 체중은 별도의 함수 내에서 계산
+            * 함수명 : std_weight
+            * 전달값 : 키(height), 성별(gender)
+    조건2) 표준 체중은 소수점 둘째자리까지 표시
+
+(출력 예제)
+키 175cm 남자의 표준 체중은 67.38kg 입니다.
+'''
+# def std_weight(height, gender):
+#     if gender == "남":
+#         return height**2 * 22
+#     elif gender == "녀":
+#         return height**2 * 21
+
+# height = 175 #cm 단위
+# gender = "남"
+# weight = round(std_weight(height/100, gender), 2)
+# print("키 {0}cm {1}의 표준 체중은 {2}kg입니다.".format(height, gender, weight))
+
+
+# ######### 표준입출력
+# print("python", "Java", "JavaScript", sep = ", ", end = "?") #end : change the last word of the sentence as the word set in the 'end' variable
+# print("무엇이 더 재밌을까요?")
+
+# import sys
+# print("python", "Java", "JavaScript", file = sys.stdout)
+# print("python", "Java", "JavaScript", file = sys.stderr)
+
+#시험 성적 사전 (key, value)
+# scores = {"수학":0, "영어":50, "코딩":100}
+
+# for subject, score in scores.items():
+#     #print(subject, score)
+#     print(subject.ljust(8), str(score).rjust(4), sep = ":") # ljust : left adjust and make space for 8 letters
+
+# #은행 대기 순번표
+# #001, 002, 003, ...
+# for num in range(1,21):
+#     print( "대기번호 : " + str(num).zfill(3) )
+
+# #표준 입력
+# answer = input("아무 값이나 입력하세요 : ") #항상 문자열 형태로 입력이 되는 것을 알 수 있다.
+# print(type(answer))
+# print("입력하신 값은 " + answer + "입니다.")
+
+
+############### 다양한 출력
+# # 빈 자리는 빈 공간으로 두고, 오른쪽 정렬을 하되, 총 10자리 공간을 확보
+# print("{0: >10}".format(500)) # > : rjust, 10 : 공간 총 20자리
+
+# #양수일 때는 +로 표시, 음수일 땐 -로 표시
+# print("{0: >+10}".format(500))
+# print("{0: >+10}".format(-500))
+
+# # 왼쪽 정렬하고, 빈칸을 _로 채움
+# print("{0:_<+10}".format(500))
+
+# #세자리 마다 콤마 찍어주기
+# print("{0:,}".format(100000000000))
+# print("{0:+,}".format(100000000000))
+# print("{0:^<+30}".format(100000000000)) #빈공간 ^, 정렬 <, 부호 +-, 자릿수 30
+
+# #소수점 출력
+# print("{0:f}".format(5/3)) #f: float 자료형
+# print("{0:.2f}".format(5/3))
+
+
+# ######### 파일 입출력
+# score_file = open("score.txt", "w", encoding="utf8") # w: to write
+# print("수학 : 0", file = score_file)
+# print("영어 : 50", file = score_file)
+# score_file.close()
+
+# score_file = open("score.txt", "a", encoding="utf8") #a : append
+# score_file.write("과학 : 80")
+# score_file.write("\n코딩 : 100")
+
+# score_file = open("score.txt", "r", encoding="utf8")
+# print(score_file.read())
+# score_file.close()
+
+# score_file = open("score.txt", "r", encoding="utf8")
+# print(score_file.readline(), end="") # 줄 별로 읽기, 한 줄 읽고 커서는 다음 줄로 이동
+# #줄바꿈을 안하고 싶다면 end = "" 추가
+# print(score_file.readline())
+# print(score_file.readline())
+# print(score_file.readline())
+# score_file.close()
+
+# score_file = open("score.txt", "r", encoding="utf8")
+# while True:
+#     line = score_file.readline()
+#     if not line:
+#         break
+#     print(line, end="")
+# score_file.close()
+
+# score_file = open("score.txt", "r", encoding="utf8")
+# lines = score_file.readlines() #모든 라인을 가지고 와서 list 형태로 저장을 함
+# for line in lines:
+#     print(line, end="")
+
+# score_file.close()
+
+
+############# Pickle
+# 프로그램상에 사용하는 데이터를 파일로 저장하는 것
+# 다른 사람들도 피클을 이용해서 그 데이터를 사용할 수 있다.
+# import pickle
+# profile_file = open("profile.pickle", "wb") #w : write b : binary(필수), encoding 불필요
+# profile = {"이름" : "박명수", "나이" : 30, "취미" : ["축구", "골프", "코딩"]}
+# print(profile)
+# pickle.dump(profile, profile_file) #profile에 있는 정보를 file에 저장
+# profile_file.close()
+
+# profile_file = open("profile.pickle", "rb")
+# profile = pickle.load(profile_file) #file에 있는 정보를 파이썬 상의 변수 profile에 저장
+# print(profile)
+# profile_file.close()
+
+
+
+######## with (pickle 없이 활용할 수 있게 해준다, 그리고 매번 close를 해줄 필요가 없어서 좋다)
+# import pickle
+# with open("Profile.pickle", "rb") as profile_file:
+#     print(pickle.load(profile_file))
+
+# 단 네 줄로 파일을 쓰고 읽기
+# with open("study.txt", "w", encoding="utf8") as study_file:
+#     study_file.write("파이썬을 열심히 공부하고 있어요")
+
+# with open("study.txt", "r", encoding="utf8") as study_file:
+#     print(study_file.read())
+
+'''
+Quiz) 당신의 회사에서는 매주 1회 작성해야하는 보고서가 있습니다.
+보고서는 항상 아래와 같은 형태로 출력되어야한다.
+
+- X 주차 주간보고 -
+부서 : 
+이름 : 
+업무 요약 : 
+
+1주차부터 50주차까지의 보고서 파일을 만드는 프로그램을 작서하시오.
+
+조건 : 파일명은 '1주차.txt', '2주차.txt', ... 와 같이 만듭니다.
+'''
+
+# for i in range(1, 51):
+#     with open(str(i).zfill(2) +"주차.txt", "w", encoding="utf8") as Weekly_Report:
+#         Weekly_Report.write("- {0} 주차 주간보고 -\n".format(i))
+#         Weekly_Report.write("부서 : \n")
+#         Weekly_Report.write("이름 : \n")
+#         Weekly_Report.write("업무요약 : \n")
+#         Weekly_Report.write("\n\n")
+
+
+
+############ Class
+# # 힘든 예
+# # 마린 : 공격 유닛, 군인, 사격
+# name = "마린" # 유닛의 이름
+# hp = 40 # 유닛의 체력
+# damage = 5 # 유닛의 공격력
+
+# print("{0} 유닛이 생성 되었습니다.".format(name))
+# print("체력 {0}, 공격력 {1} \n".format(hp, damage))
+
+# # 탱크 : 공격 유닛, 탱크, 포 사격, 일반 모드/시즈 모드
+# tank_name = "탱크"
+# tank_hp = 150
+# tank_damage = 35
+# print("{0} 유닛이 생성 되었습니다.".format(tank_name))
+# print("체력 {0}, 공격력 {1} \n".format(tank_hp, tank_damage))
+
+# tank2_name = "탱크"
+# tank2_hp = 150
+# tank2_damage = 35
+# print("{0} 유닛이 생성 되었습니다.".format(tank2_name))
+# print("체력 {0}, 공격력 {1} \n".format(tank2_hp, tank2_damage))
+
+
+# def attack(name, location, damage):
+#     print("{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]".format(name, location, damage))
+
+# attack(name, "1시", damage)
+# attack(tank_name, "1시", tank_damage)
+# attack(tank2_name, "1시", tank2_damage)
+
+# 클래스를 활용한 예
+# # 일반 유닛
+# class Unit:
+#     def __init__(self, name, hp, damage): # name, hp, damage는 멤버 변수, "."으로 접근할 수 있음
+#         # __init__ : 객체 생성자 
+#         self.name = name
+#         self.hp = hp
+#         self.damage = damage
+#         print("{0} 유닛이 생성 되었습니다.".format(self.name))
+#         print("체력 {0}, 공격력 {1}".format(self.hp, self.damage))
+
+# # marine1 = Unit("마린", 40, 5)
+# # marine2 = Unit("마린", 40, 5)
+# # tank = Unit("탱크", 150, 35)
+
+# #레이스 : 공중유닛, 비행기, 클로킹
+# wraith1 = Unit("레이스", 80, 5)
+# print("유닛 이름 : {0}, 공격력 : {1}".format(wraith1.name, wraith1.damage))
+
+# # 마인드 컨트롤 : 상대방 유닛을 내 것으로 만드는 것 (빼앗음)
+# wraith2 = Unit("레이스", 80, 5)
+# wraith2.clocking = True
+
+# if wraith2.clocking == True:
+#     print("{0}는 현재 크로킹 상태입니다.".format(wraith2.name))
+
+# # 공격유닛
+# class AttackUnit:
+#     # class내에서의 method는 항상 self를 입력하고 간다
+#     def __init__(self, name, hp, damage): # name, hp, damage는 멤버 변수, "."으로 접근할 수 있음
+#         # __init__ : 객체 생성자 
+#         self.name = name
+#         self.hp = hp
+#         self.damage = damage
+    
+#     def attack(self, location):
+#         print("{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]".format(self.name, location, self.damage))
+
+#     def damaged(self, damage):
+#         print("{0} : {1} 데미지를 입었습니다.".format(self.name, damage))
+#         self.hp -= damage
+#         print("{0} : 현재 체력은 {1}입니다.".format(self.name, self.hp))
+#         if self.hp <= 0:
+#             print("{0} : 파괴되었습니다.".format(self.name))
+
+# # 파이어백 : 공격 유닛, 화염방사기
+# firebat1 = AttackUnit("파이어벳", 50, 16)
+# firebat1.attack("5시")
+
+# #공격 2번 받는다고 가정
+# firebat1.damaged(25)
+# firebat1.damaged(25)
+
+
+# ############ 상속
+# # 일반 유닛 for 상속 exmaple
+# class Unit:
+#     def __init__(self, name, hp):
+#         # __init__ : 객체 생성자 
+#         self.name = name
+#         self.hp = hp
+
+# # 공격유닛
+# class AttackUnit(Unit):
+#     def __init__(self, name, hp, damage):
+#         Unit.__init__(self, name, hp)
+#         self.damage = damage
+    
+#     def attack(self, location):
+#         print("{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]".format(self.name, location, self.damage))
+
+#     def damaged(self, damage):
+#         print("{0} : {1} 데미지를 입었습니다.".format(self.name, damage))
+#         self.hp -= damage
+#         print("{0} : 현재 체력은 {1}입니다.".format(self.name, self.hp))
+#         if self.hp <= 0:
+#             print("{0} : 파괴되었습니다.".format(self.name))
+
+# # 파이어백 : 공격 유닛, 화염방사기
+# firebat1 = AttackUnit("파이어벳", 50, 16)
+# firebat1.attack("5시")
+
+# #공격 2번 받는다고 가정
+# firebat1.damaged(25)
+# firebat1.damaged(25)
+
+
+# ####### 다중 상속
+# # 일반 유닛 for 상속 exmaple
+# class Unit:
+#     def __init__(self, name, hp, speed):
+#         # __init__ : 객체 생성자 
+#         self.name = name
+#         self.hp = hp
+#         self.speed = speed
+#     def move(self, location):
+#         print("[지상 유닛 이동]")
+#         print("{0} : {1} 방향으로 이동합니다. [속도 {2}]".format(self.name, location, self.speed))
+
+# # 공격유닛
+# class AttackUnit(Unit):
+#     def __init__(self, name, hp, speed, damage):
+#         Unit.__init__(self, name, hp, speed)
+#         self.damage = damage
+    
+#     def attack(self, location):
+#         print("{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]".format(self.name, location, self.damage))
+
+#     def damaged(self, damage):
+#         print("{0} : {1} 데미지를 입었습니다.".format(self.name, damage))
+#         self.hp -= damage
+#         print("{0} : 현재 체력은 {1}입니다.".format(self.name, self.hp))
+#         if self.hp <= 0:
+#             print("{0} : 파괴되었습니다.".format(self.name))
+
+# #드랍쉽 : 공중 유닛, 수송기
+# class Flyable:
+#     def __init__(self, flying_speed):
+#         self.flying_speed = flying_speed
+    
+#     def fly(self, name, location):
+#         print("{0} : {1} 방향으로 날아갑니다. [속도 {2}]".format(name, location, self.flying_speed))
+
+# # 공중 공격유닛 클래스
+# class FlyableAttackUnit(AttackUnit, Flyable):
+#     def __init__(self, name, hp, damage, flying_speed):
+#         AttackUnit.__init__(self, name, hp, 0, damage) # 지상 speed는 0으로 처리한 것
+#         Flyable.__init__(self, flying_speed)
+    
+#     def move(self, location):
+#         print("[공중 유닛 이동]")
+#         self.fly(self.name, location)
+
+# # 발키리 공격 유닛, 한번에 14발 발사
+# valkyrie = FlyableAttackUnit("발키리", 200, 6, 5)
+# valkyrie.fly(valkyrie.name, "3시")
+
+
+
+# ##### 연산자 오버로딩
+# # 부모 클래스에서 정의한 매소드 말고 자식 클래스에서 정의한 매소드를 쓰고 싶을 때 매소드를 새로 정의해서 사용하는데 이를 오버로딩이라고 한다.
+
+# #벌쳐 : 지상 유닛, 기동성이 좋음
+# vulture = AttackUnit("벌쳐", 80, 10, 20)
+
+# #배틀크루저 : 공중 유닛, 체력도 굉장히 좋음, 공격력 좋음
+# battlecruiser = FlyableAttackUnit("배틀크루저", 500, 25, 3)
+
+# vulture.move("11시")
+# # battlecruiser.fly(battlecruiser.name, "9시") # 이 유닛이 지상 유닛인지 공중유닛인지 항상 파악해야해서 귀찮음! 그래서 오버로딩해서 fly말고 move만 써도 되게끔!
+# '''
+#     def move(self, location):
+#     print("[공중 유닛 이동")
+#     self.fly(self.name, location)
+# ''' #이 부분을 추가하여 아래와 같이 만듦
+# battlecruiser.move("9시")
+
+
+# ########## pass
+# # 건물
+# class buildingUnit(Unit):
+#     def __init__(self, name, hp, location):
+#         pass #일단은 완성된 걸로 치고 넘어가자! 라는 뜻
+
+# # 서플라이 디폿 : 건물, 1개 건물 = 8, 유닛.
+# supply_depot = buildingUnit("서플라이 디폿", 500, "7시")
+
+# def game_start():
+#     print("[알림] 새로운 게임을 시작합니다.")
+
+# def game_over():
+#     pass
+
+# game_start()
+# game_over()
+
+# ############## super
+# # 건물
+# class buildingUnit(Unit):
+#     def __init__(self, name, hp, location):
+#         # Unit.__init__(self, name, hp, 0)
+#         super().__init__(name, hp, 0) #super를 통해서 초기화할때는 self정보를 넘겨주지 않아야함
+#         self.location = location
+
+
+# ############# class 상속 순서
+# class Unit:
+#     def __init__(self):
+#         print("Unit 생성자")
+
+# class Flyable:
+#     def __init__(self):
+#         print("Flyable 생성자")
+# # 1)
+# class FlyableUnit(Unit, Flyable):
+#     def __init__(self):
+#         #super().__init__()
+#         Unit.__init__(self)
+#         Flyable.__init__(self)
+
+# # # 2)
+# # class FlyableUnit(Flyable, Unit):
+# #     def __init__(self):
+# #         super().__init__()
+
+# # 1번과 2번의 순서에 따라 상속 결과가 다르다
+# # 따라서 Super보다는 둘 다 각각의 부모 클래스를 거쳐 오는 것이 좋다
+
+# #드랍쉽
+# dropship = FlyableUnit()
+
+
+
+######################## 스타크래프트 전반전 ###################### 프로젝트
+# 일반 유닛 for 상속 exmaple
+class Unit:
+    def __init__(self, name, hp, speed):
+        self.name = name
+        self.hp = hp
+        self.speed = speed
+        print("{0} 유닛이 생성되었습니다.".format(name))
+
+    def move(self, location):
+        print("[지상 유닛 이동]")
+        print("{0} : {1} 방향으로 이동합니다. [속도 {2}]".format(self.name, location, self.speed))
+
+    def damaged(self, damage):
+        print("{0} : {1} 데미지를 입었습니다.".format(self.name, damage))
+        self.hp -= damage
+        print("{0} : 현재 체력은 {1}입니다.".format(self.name, self.hp))
+        if self.hp <= 0:
+            print("{0} : 파괴되었습니다.".format(self.name))
+
+# 공격유닛
+class AttackUnit(Unit):
+    def __init__(self, name, hp, speed, damage):
+        Unit.__init__(self, name, hp, speed)
+        self.damage = damage
+    
+    def attack(self, location):
+        print("{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]".format(self.name, location, self.damage))
+
+# 마린
+class Marine(Unit):
+    def __init__(Self):
+        AttackUnit.__init__(self, "마린", 40, 1, 5)
+
+    #스팀팩
+    def stimpack(self):
+        if self.hp > 10:
+            self.hp -=10
+            print("{0} : 스팀팩을 사용합니다. (HP 10 감소)".format(self.name))
+        else:
+            print("{0} : 체력이 부족합니다.".format(self.name))
+     
+#탱크
+class Tank(AttackUnit):
+    # 시즈모드 개발여부
+    seize_developed = False 
+
+    def __init__(self):
+        AttackUnit.__init__(self, "탱크", 150, 1, 35)
+        self.seize_mode = False
+
+    def set_seize_mode(self):
+        if Tank.seize_developed == False:
+            return
+        # 현재 시즈모드가 아닐 때 -> 시즈모드
+        if self.seize_mode == False:
+            print("{0} : 시즈모드로 전환합니다.".format(self.name))
+            self.damage *= 2
+            self.seize_mode = True
+        # 현재 시즈모드일 때 -> 시즈모드 해제
+        else:
+            print("{0} : 시즈모드를 해제합니다.".format(self.name))
+            self.damage /= 2
+            self.seize_mode = False
+
+#드랍쉽 : 공중 유닛, 수송기
+class Flyable:
+    def __init__(self, flying_speed):
+        self.flying_speed = flying_speed
+    
+    def fly(self, name, location):
+        print("{0} : {1} 방향으로 날아갑니다. [속도 {2}]".format(name, location, self.flying_speed))
+
+# 공중 공격유닛 클래스
+class FlyableAttackUnit(AttackUnit, Flyable):
+    def __init__(self, name, hp, damage, flying_speed):
+        AttackUnit.__init__(self, name, hp, 0, damage) # 지상 speed는 0으로 처리한 것
+        Flyable.__init__(self, flying_speed)
+    
+    def move(self, location):
+        print("[공중 유닛 이동]")
+        self.fly(self.name, location)
+
+#레이스
+class Wraith(FlyableAttackUnit):
+    def __init__(self):
+        FlyableAttackUnit.__init__(self, "레이스", 80, 20, 5)
+        self.clocking = False
+    def clocking(self):
+        if self.colcked == True:
+            print("{0} : 클로킹 모드 해제 합니다".format(self.name))
+            self.clocked = False
+        else:
+            print("{0} : 클로킹 모드 설정 합니다".format(self.name))
+            self.clocked = True
+
+############################ 스타크래프트 후반전
