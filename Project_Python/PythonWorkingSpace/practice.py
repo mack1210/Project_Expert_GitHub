@@ -84,7 +84,7 @@ condition
 # print("뒷 일곱자리 : " + jumin[9:])
 # print("뒷 일곱자리 : " + jumin[-7:]) #뒤에서 부터 계산했을 경우
 
-#문자열 처리함수
+# #문자열 처리함수
 # python = "Python is amazing!"
 # print(python.lower())
 # print(python.upper())
@@ -553,7 +553,7 @@ Quiz) 당신은 Cocoa 서비스를 이용하는 택시 기사님입니다.
 # print("python", "Java", "JavaScript", file = sys.stdout)
 # print("python", "Java", "JavaScript", file = sys.stderr)
 
-#시험 성적 사전 (key, value)
+# #시험 성적 사전 (key, value)
 # scores = {"수학":0, "영어":50, "코딩":100}
 
 # for subject, score in scores.items():
